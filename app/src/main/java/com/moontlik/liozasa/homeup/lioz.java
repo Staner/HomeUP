@@ -5,5 +5,6 @@ package com.moontlik.liozasa.homeup;
  */
 public class lioz {
 
-    String hi = "fjhg";
+    String hi = "fjkhg";
+
 }
