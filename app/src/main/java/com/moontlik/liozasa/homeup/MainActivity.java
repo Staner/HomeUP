@@ -7,17 +7,33 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.moontlik.liozasa.homeup.Login.Login;
+import com.parse.ParseUser;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    //Logic param
+    ParseUser currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_appbar);
+        currentUser = ParseUser.getCurrentUser();
+        if(currentUser == null) {
+            Log.d("Moontlik", "currentUser null");
+            startActivity(new Intent(this, Login.class));
+        }else {
+            setContentView(R.layout.activity_main_appbar);
+            initLayout();
+        }
+    }
 
+    private void initLayout() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -28,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
         NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer,(DrawerLayout)findViewById(R.id.drawer_layout), toolbar);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     private void setupViewPager(ViewPager viewPager) {

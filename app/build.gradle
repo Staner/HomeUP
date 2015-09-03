@@ -19,10 +19,19 @@ android {
     }
 }
 
+repositories { mavenCentral() }
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:support-v4:22.2.0'
     compile 'com.android.support:recyclerview-v7:22.2.0'
     compile 'com.android.support:design:22.2.0'
+
+    //Parse
+    compile files('libs/Parse-1.10.1.jar')
+    compile files('libs/ParseFacebookUtilsV4-1.10.1.jar')
+
+    //Facebook
+    compile 'com.facebook.android:facebook-android-sdk:4.0.0'
 }
