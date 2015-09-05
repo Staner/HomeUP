@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moontlik.liozasa.homeup" >
-
     //Permission
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission
+        android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission
+        android:name="android.permission.WRITE_CALENDAR"/>
 
     <application
         android:name=".AppManager"
@@ -12,7 +16,6 @@
         android:icon="@drawable/homeup_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
@@ -22,12 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Login.Login"
             android:label="@string/title_activity_login" >
         </activity>
-
         <activity
             android:name=".Login.SignUp"
             android:label="@string/title_activity_sign_up" >
@@ -39,16 +40,19 @@
 
         <activity
             android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:label="@string/app_name" />
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-        <provider android:authorities="com.facebook.app.FacebookContentProvider965183093523509"
+        <provider
             android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider965183093523509"
             android:exported="true" />
 
-
+        <activity
+            android:name=".Activities.CustomizedActivity"
+            android:label="@string/title_activity_customized" >
+        </activity>
     </application>
 
 </manifest>

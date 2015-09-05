@@ -14,4 +14,25 @@
 
     <!-- Facebook API key -->
     <string name="facebook_app_id">965183093523509</string>
+    <!--Menu titles-->
+    <string name="create_an_event">Create An Event </string>
+    <string name="title_activity_customized">CustomizedActivity</string>
+
+    <!--for customized Activity, which group of event we want-->
+    <string-array name="group_from_event">
+        <item>economic</item>
+        <item>finacial</item>
+        <item>item3</item>
+        <item>item4</item>
+    </string-array>
+    <!--repeat the event we create for calendar-->
+    <string-array name="repeat_array">
+        <item>One-Time event</item>
+        <item>Daily</item>
+        <item>Every Weekday(mon-fri)</item>
+        <item>weekly</item>
+        <item>monthly</item>
+        <item>yearly</item>
+    </string-array>
+
 </resources>

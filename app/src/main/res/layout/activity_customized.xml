@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.moontlik.liozasa.homeup.Activities.CustomizedActivity">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load Calendar"
+        android:id="@+id/btnLoadCal"
+        android:layout_below="@+id/btnGroup"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="נושא"
+        android:id="@+id/tvSubject"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etSubject"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/tvSubject"
+        android:layout_toStartOf="@+id/tvSubject"
+        android:hint="subject" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="קבוצה"
+        android:id="@+id/btnGroup"
+        android:layout_below="@+id/etSubject"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="אנא בחר מהרשימה"
+        android:id="@+id/tvGroupSelected"
+        android:layout_alignBottom="@+id/btnGroup"
+        android:layout_toLeftOf="@+id/btnGroup"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="בחר תאריך"
+        android:id="@+id/tvCalendarDate"
+        android:layout_alignBottom="@+id/btnLoadCal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/btnLoadCal"
+        android:layout_toStartOf="@+id/btnLoadCal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="תיאור"
+        android:id="@+id/tvDescription"
+        android:layout_below="@+id/btnLoadCal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etDescription"
+        android:layout_alignTop="@+id/tvDescription"
+        android:layout_toLeftOf="@+id/tvDescription"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Description" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="בחר חזרה"
+        android:id="@+id/btnRepeat"
+        android:layout_below="@+id/etDescription"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="אנא בחר מהרשימה"
+        android:id="@+id/tvRepeat"
+        android:layout_alignBottom="@+id/btnRepeat"
+        android:layout_alignRight="@+id/tvGroupSelected"
+        android:layout_alignEnd="@+id/tvGroupSelected" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="שלח"
+        android:id="@+id/btnSendData"
+        android:layout_below="@+id/tvRepeat"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

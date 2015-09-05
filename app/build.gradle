@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.moontlik.liozasa.homeup"
-        minSdkVersion 10
+        minSdkVersion 14
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -34,4 +34,10 @@ dependencies {
 
     //Facebook
     compile 'com.facebook.android:facebook-android-sdk:4.0.0'
+
+    //to get all Calendar ID's
+    compile 'me.everything:providers-android:1.0.1'
+
+    //Material Design Calendar
+    compile 'com.prolificinteractive:material-calendarview:0.8.1'
 }

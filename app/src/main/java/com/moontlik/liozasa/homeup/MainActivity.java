@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     //Logic param
     ParseUser currentUser;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
         }else {
             setContentView(R.layout.activity_main_appbar);
             initLayout();
+
+
+
         }
     }
 
@@ -82,4 +87,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

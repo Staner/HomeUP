@@ -8,7 +8,7 @@ public class lioz {
     String hi = "hi emik";
     String guyPushed = "ssssss";
 
-String higuy = "hi";
+    String higuy = "hi";
 
 
     //ERROR

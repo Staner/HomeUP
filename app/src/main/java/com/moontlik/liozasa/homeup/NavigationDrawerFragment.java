@@ -36,6 +36,8 @@ public class NavigationDrawerFragment extends Fragment {
     private View containerView;
     private boolean isDrawerOpened = false;
 
+
+
     public NavigationDrawerFragment() {
         // Required empty public constructor
     }
@@ -52,6 +54,7 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
@@ -75,7 +78,8 @@ public class NavigationDrawerFragment extends Fragment {
                 R.drawable.ic_map_black_24dp,
                 R.drawable.ic_settings_black_24dp
         };
-        String[] titles = {"Layout 1", "Layout 2", "Layout 3", "Layout 4", "Layout 5"};
+        //TODO: change 'Create An Event' to R.string.create_an_event
+        String[] titles = {"Create An Event", "Layout 2", "Layout 3", "Layout 4", "Layout 5"};
         for(int i = 0; i<titles.length && i<icons.length; i++){
             NavigationMenu current = new NavigationMenu();
             current.iconId = icons[i];
