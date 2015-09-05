@@ -44,12 +44,6 @@ import static com.moontlik.liozasa.homeup.R.array.repeat_array;
 
 public class CustomizedActivity extends AppCompatActivity {
 
-
-    /**
-     * Let's check if user have created a Calendar already
-     * @param savedInstanceState
-     */
-
     //the date we set from the Dialog
     private static final DateFormat FORMATTER = SimpleDateFormat.getDateInstance();
 
@@ -80,9 +74,11 @@ public class CustomizedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customized);
-
+        // We set pref to Constant file we've create on device -> reference
         pref = getSharedPreferences(Constants.MEMORY_FILE_ON_DEVICE, Context.MODE_PRIVATE);
+        //Layout
         initLayout();
+        //events
         initEvents();
 
         //Check if the user created a calendar, if not we going to create one
@@ -171,8 +167,8 @@ public class CustomizedActivity extends AppCompatActivity {
                 month -= 1;
                 Log.d("yearMonthDay", String.valueOf(year + "-" + month + "-" + day));
 
-                //todo: if else , with alerts
-                anotherOne(getCalendarIId(), etSubject.getText().toString(), tvGroupSelected.getText().toString() + ": " + etDescription.getText().toString(), year, month, day);
+                //TODO: I NEED TO DO IF ELSE ( if I finish to submit all the fields, then let me send the data, else show an alert)
+                createAnEventOnCalendar(getCalendarID(), etSubject.getText().toString(), tvGroupSelected.getText().toString() + ": " + etDescription.getText().toString(), year, month, day);
             }
         });
 
@@ -181,7 +177,7 @@ public class CustomizedActivity extends AppCompatActivity {
     /**
      * Get the id of Calendar
      */
-    private long getCalendarIId (){
+    private long getCalendarID(){
         String idOfCalendar = "Home Up";
 
         CalendarProvider provider = new CalendarProvider(this);
@@ -197,8 +193,11 @@ public class CustomizedActivity extends AppCompatActivity {
         }
         return 0;
     }
-
-    public  void anotherOne(final long theIdOfCalendar, final String title,final String desc, final int year, final int month, final int day){
+    /*
+    With this method we create the event on Calendar
+    TODO: add Repeat on event , RRULE & XRULE FEQ:WEEKLY etc.
+     */
+    public  void createAnEventOnCalendar(final long theIdOfCalendar, final String title, final String desc, final int year, final int month, final int day){
         // must be off the UI thread
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -259,7 +258,7 @@ public class CustomizedActivity extends AppCompatActivity {
 
     /**
      * Calendar settings
-     * Checking if Calendar
+     * Checking if Calendar exists
      */
     private void checkIfWeCreatedCalendar(){
         //let's check if we created an calendar already
@@ -286,7 +285,7 @@ public class CustomizedActivity extends AppCompatActivity {
 
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        // change the xml
+                        // User Disagree, we going to change the xml to block
                         setContentView(R.layout.activity_customized_no_permission);
 
                     }
