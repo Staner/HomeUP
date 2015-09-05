@@ -6,6 +6,8 @@ package com.moontlik.liozasa.homeup;
 public class lioz {
     String first = "emik";
     String hi = "hi emik";
+    String guyPushed = "ssssss";
+
 
 
 
