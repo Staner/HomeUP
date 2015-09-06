@@ -34,5 +34,7 @@
         <item>monthly</item>
         <item>yearly</item>
     </string-array>
+    <string name="title_activity_coacher_template">CoacherTemplate</string>
+    <string name="title_activity_coacher_template_list">CoacherTemplateList</string>
 
 </resources>

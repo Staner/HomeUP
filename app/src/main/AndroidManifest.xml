@@ -4,11 +4,8 @@
     //Permission
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <uses-permission
-        android:name="android.permission.READ_CALENDAR"/>
-    <uses-permission
-        android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <application
         android:name=".AppManager"
@@ -52,6 +49,10 @@
         <activity
             android:name=".Activities.CustomizedActivity"
             android:label="@string/title_activity_customized" >
+        </activity>
+        <activity
+            android:name=".CoacherTemlate.CoacherTemplateList"
+            android:label="@string/title_activity_coacher_template_list" >
         </activity>
     </application>
 

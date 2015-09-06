@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.moontlik.liozasa.homeup.Activities.CustomizedActivity;
+import com.moontlik.liozasa.homeup.CoacherTemlate.CoacherTemplateList;
 
 import java.util.Collections;
 import java.util.List;
@@ -87,14 +88,12 @@ public class NavigationAdapter extends RecyclerView.Adapter<NavigationAdapter.My
                     .setNeutralButton("Coacher template", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(inflater.getContext(), CoacherTemplateList.class);
+                            inflater.getContext().startActivity(intent);
 
                         }
+
                     })
-             .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                 public void onClick(DialogInterface dialog, int which) {
-                     // do nothing
-                 }
-             })
                     .setIcon(android.R.drawable.ic_dialog_info)
                     .show();
         }

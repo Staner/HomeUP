@@ -11,17 +11,24 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.moontlik.liozasa.homeup.CoacherTemlate.CoacherTemplate;
 import com.moontlik.liozasa.homeup.Login.Login;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
 
     //Logic param
     ParseUser currentUser;
-
-
-
+    public static int counterLoadFromParse = 0;
+    public static List<CoacherTemplate> COACHER_TEMPLATS;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +43,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+         // load constant from parse
+        if (counterLoadFromParse == 0) {
+            counterLoadFromParse++;
+            loadFromParse();
+
+        }
     }
+
+
 
     private void initLayout() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
@@ -86,6 +101,50 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+
+    private void loadFromParse() {
+
+        loadCoacherTemplate();
+
+
+
+    }
+
+    private void loadCoacherTemplate() {
+
+        COACHER_TEMPLATS = new ArrayList<>();
+
+        final ParseQuery<ParseObject> coacherTemplate = new ParseQuery<ParseObject>("Coacher_Template");
+
+        coacherTemplate.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> parseObjects, ParseException e) {
+                if (e == null && parseObjects != null) {
+                    for (ParseObject parseObject : parseObjects) {
+
+
+                            String subject = parseObject.getString("subject");
+                            String group = parseObject.getString("group");
+                            String description = parseObject.getString("description");
+                            String repeat = parseObject.getString("repeat");
+
+
+                         CoacherTemplate coacherTemplate = new CoacherTemplate(subject,group,description,repeat);
+                         COACHER_TEMPLATS.add(coacherTemplate);
+
+                        }
+                    }
+
+
+                }
+
+
+
+        });
+
     }
 
 
